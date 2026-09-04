@@ -1,0 +1,37 @@
+{
+  "model_version": "video_auc_v2",
+  "official_checkpoint": "dual_best.pth",
+  "official_checkpoint_decision": "keep_current",
+  "official_checkpoint_sha256": "2499bc2020eea1f7a7f0ca448312d64c4771f81f6e834944e682c4498df8dd42",
+  "score_definition": "mean of per-frame sigmoid probabilities",
+  "prediction_threshold": 0.5,
+  "calibrated": false,
+  "benchmarks": {
+    "ffpp_source_disjoint_test": {
+      "spatial_video_auc": 0.9884,
+      "dual_video_auc": 0.9901,
+      "dual_accuracy": 0.9634,
+      "dual_f1": 0.9769,
+      "coverage": 1.0
+    },
+    "celeb_df_official_test_evaluable_subset": {
+      "dual_video_auc": 0.8362,
+      "coverage": 0.9691,
+      "evaluable_videos": 502,
+      "expected_videos": 518
+    },
+    "strict_frequency_residual_disabled": {
+      "video_auc": 0.9663
+    },
+    "frequency_only_baseline": {
+      "video_auc": 0.6439
+    }
+  },
+  "limitations": [
+    "Frames are analysed independently; temporal consistency is not modelled.",
+    "Only the highest-confidence detected face is retained per sampled frame.",
+    "Demographic fairness has not been established.",
+    "Grad-CAM shows model sensitivity, not manipulation localisation.",
+    "Scores are not calibrated probabilities or forensic proof."
+  ]
+}

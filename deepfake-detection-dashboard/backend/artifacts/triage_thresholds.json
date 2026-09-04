@@ -1,0 +1,9 @@
+{
+  "fit_split": "FF++ validation",
+  "n_validation_videos": 719,
+  "operating_point": "90% target coverage",
+  "margin_thresholds": {
+    "0.90": 0.2903130567749031
+  },
+  "note": "The threshold was selected using validation data only and is not a probability-calibration parameter."
+}
